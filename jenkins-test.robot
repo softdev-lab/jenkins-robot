@@ -65,3 +65,12 @@ true_when_x_is_13219
 #     Should Be Equal     ${responds.status_code}    ${200}
 #     Should Not Be True    ${responds.json()}
 #     Delete All Sessions
+
+# VM2 - cd workspace
+# VM2 - cd jenkins-test
+# VM2 - cd robot
+# ^-^ อันข้างบนคือ เข้าโฟลเดอร์นะงับ
+
+
+# VM2 - python3 -m robot jenkin-test.robot
+# ^-^ อันข้างบนคือ รัน robotframework นะครับ แต่มันจะเฟล เพราะว่า jenkins ที่ออกแบบไว้จะล้าง docker container ทำให้ api ไม่ทำงาน อาจารย์อาจจะให้ใช้คำสั่ง cat report.html
