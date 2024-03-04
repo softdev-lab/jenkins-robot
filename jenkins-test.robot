@@ -74,3 +74,6 @@ true_when_x_is_13219
 
 # VM2 - python3 -m robot jenkin-test.robot
 # ^-^ อันข้างบนคือ รัน robotframework นะครับ แต่มันจะเฟล เพราะว่า jenkins ที่ออกแบบไว้จะล้าง docker container ทำให้ api ไม่ทำงาน อาจารย์อาจจะให้ใช้คำสั่ง cat report.html
+
+# VM2 - ls -l
+# ^-^ คำสั่งดูเวลาไฟล์
