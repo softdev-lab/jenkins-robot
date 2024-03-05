@@ -31,25 +31,25 @@ Library    RequestsLibrary
 #     Delete All Sessions
 
 *** Test Cases ***
-true_when_x_is_17
-    [Documentation]    Test 17
-    ${responds}=     GET    http://localhost:5000/is_prime/17
+test_x_is_5
+    [Documentation]    Test xis5
+    ${responds}=     GET    http://localhost:5000/next3/5
     Should Be Equal     ${responds.status_code}    ${200}
-    Should Be True    ${responds.json()}
+    Should Be Equal As Numbers    ${responds.text}    ${8}
     Delete All Sessions
 
-false_when_x_is_36
-    [Documentation]    Test 36
-    ${responds}=     GET    http://localhost:5000/is_prime/36
+test_x_is_neg5
+    [Documentation]    Test neg5
+    ${responds}=     GET    http://localhost:5000/next3/-5
     Should Be Equal     ${responds.status_code}    ${200}
-    Should Not Be True    ${responds.json()}
+    Should Be Equal As Numbers    ${responds.text}    ${-2}
     Delete All Sessions
 
-true_when_x_is_13219
-    [Documentation]    Test 13219
-    ${responds}=     GET    http://localhost:5000/is_prime/13219
+test_x_is_3dot5
+    [Documentation]    Test 3dot5
+    ${responds}=     GET    http://localhost:5000/next3/3.5
     Should Be Equal     ${responds.status_code}    ${200}
-    Should Be True    ${responds.json()}
+    Should Be Equal As Numbers    ${responds.text}    ${6.5}
     Delete All Sessions
 
 # false_when_x_is_abcd
